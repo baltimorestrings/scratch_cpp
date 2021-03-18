@@ -21,11 +21,17 @@ int main(int argc, char **argv) {
     const char* gUser = std::getenv("GRAZE_USER");
     const char* gPass = std::getenv("GRAZE_PASS");
     // Check arguments and env-vars
-    if (argc != 2) { die("Please supply a situation ID.\n");}
+    if (argc != 2) {
+        die("Please supply a situation ID.\n");
+    }
     try { 
         std::stoi(argv[1]); 
-    } catch (std::exception) { die("Please provide an integer argument.\n");}
-    if (!gUser || !gPass) { die("env vars not found.\n");}
+    } catch (std::exception) {
+        die("Please provide an integer argument.\n");
+    }
+    if (!gUser || !gPass) {
+        die("env vars not found.\n");
+    }
     
     baseUrl += argv[1];
     
