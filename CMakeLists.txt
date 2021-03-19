@@ -9,6 +9,7 @@ set(CURL_LIBRARY "-lcurl")
 find_package(CURL REQUIRED)
 
 add_executable(go main.cpp )
+add_executable(o m.cpp )
 
 include_directories(${CURL_INCLUDE_DIR})
 target_link_libraries(go ${CURL_LIBRARIES})

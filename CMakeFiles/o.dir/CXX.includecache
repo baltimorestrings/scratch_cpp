@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/afrankel02/cpp/cli/m.cpp
+iostream
+-
+fstream
+-
+vector
+-
+iomanip
+-
+cctype
+-
+algorithm
+-
+

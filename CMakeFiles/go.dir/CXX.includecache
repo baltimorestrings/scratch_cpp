@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/afrankel02/cpp/cli/main.cpp
+iostream
+-
+fstream
+-
+curl/curl.h
+-
+vector
+-
+string
+-
+

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <curl/curl.h>
 #include <vector>
 #include <string>
@@ -38,7 +39,6 @@ int main(int argc, char **argv) {
 
     curl  = curl_easy_init();
     if (curl) {
-        std::cout << baseUrl << std::endl;
         curl_easy_setopt(curl, CURLOPT_URL, baseUrl.c_str());
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
@@ -48,6 +48,10 @@ int main(int argc, char **argv) {
         res  = curl_easy_perform(curl);
         std::cout << readBuffer << std::endl;
         curl_easy_cleanup(curl);
+        const char * c_buffer = readBuffer.c_str();
+        std::fstream file("sit_id.json", std::ios::binary | std::ios::out);
+        file.write(c_buffer, strlen(c_buffer));
+
     }
     return 0;
 }
