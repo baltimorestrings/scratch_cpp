@@ -1,0 +1,4 @@
+/Users/afrankel02/cpp/cli/CMakeFiles/rebuild_cache.dir
+/Users/afrankel02/cpp/cli/CMakeFiles/edit_cache.dir
+/Users/afrankel02/cpp/cli/CMakeFiles/o.dir
+/Users/afrankel02/cpp/cli/CMakeFiles/go.dir
