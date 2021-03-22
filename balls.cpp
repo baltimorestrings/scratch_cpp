@@ -63,9 +63,9 @@ int main(int argc, char **argv) {
     if (argc < 2)
         die ("Provide a num of balls");
     try {
-        iNumBalls = std::atoi(argv[1]);
-    } catch (std::exception e) {
-        std::cout << e.what() << std::endl;
+        iNumBalls = std::stoi(argv[1]);
+    } catch (std::exception const &e) {
+        die("Invalid number provided.");
     }
     // init
     srand(time(0));
