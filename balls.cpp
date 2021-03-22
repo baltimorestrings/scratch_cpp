@@ -32,10 +32,6 @@ class Ball {
 
         Ball(int x, int y, int dx, int dy, char c): pos{x,y}, dx(dx), dy(dy), c(c) {}
 
-        const PositionTuple& getPos() {
-            return pos;
-        }
-
         void Move(int width, int height) {
             pos.x += dx;
             pos.y += dy;
@@ -49,7 +45,13 @@ class Ball {
             }
         }
 
-        const char& getChar() { return c; }
+        const PositionTuple& getPos() {
+            return pos;
+        }
+
+        const char& getChar() {
+            return c;
+        }
 };
     
 const char Ball::chars[] = {'*', 'O', 'o', '.', '$', '@', '#', '+'};
