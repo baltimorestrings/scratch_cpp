@@ -11,40 +11,41 @@ void signalCallbackHandler(int signum) {
     exit(0);
 }
 
-struct TupleInts {
-    int first;
-    int second;
-    inline bool operator==(TupleInts o) { return (first == o.first && second == o.second); }
+struct PositionTuple {
+    int x;
+    int y;
+    inline bool operator==(PositionTuple o) { return (x == o.x && y == o.y); }
 };
 
 class Ball {
     private:
         static const char chars[];
-        int x, y, dx, dy;
+        PositionTuple pos;
+        int dx, dy;
         char c;
     public:
-        Ball(): x(rand()%100), y(rand()%100), dx(rand()%4-2), dy(rand()%4-2) {
+        Ball(): pos{rand()%100, rand()%100}, dx(rand()%4-2), dy(rand()%4-2) {
             if (dx == 0) dx = 1;
             if (dy == 0) dy = 1;
             c = Ball::chars[rand() % strlen(Ball::chars)];
         }
 
-        Ball(int x, int y, int dx, int dy, char c): x(x), y(y), dx(dx), dy(dy), c(c) {}
+        Ball(int x, int y, int dx, int dy, char c): pos{x,y}, dx(dx), dy(dy), c(c) {}
 
-        TupleInts getPos() {
-            return TupleInts{x, y};
+        const PositionTuple& getPos() {
+            return pos;
         }
 
         void Move(int width, int height) {
-            x += dx;
-            y += dy;
-            if (x <= 0 || x >= width) {
+            pos.x += dx;
+            pos.y += dy;
+            if (pos.x <= 0 || pos.x >= width) {
                 dx *= -1;
-                x = (x <= 0) ? -x : (width - (x - width));
+                pos.x = (pos.x <= 0) ? -pos.x : (width - (pos.x - width));
             }
-            if (y <= 0 || y >= height) {
+            if (pos.y <= 0 || pos.y >= height) {
                 dy *= -1;
-                y = (y <= 0)? -y : (height - (y - height));
+                pos.y = (pos.y <= 0)? -pos.y : (height - (pos.y - height));
             }
         }
 
@@ -60,7 +61,7 @@ void die(const char *msg) {
 
 int main(int argc, char **argv) {
 
-    TupleInts pos;
+    PositionTuple pos;
     int iWidth{0};
     int iHeight{0};
     std::vector<std::unique_ptr<Ball>> vBalls;
@@ -92,10 +93,10 @@ int main(int argc, char **argv) {
         // main loop
         for (auto &b : vBalls) {
             pos = b->getPos();
-            mvaddch(pos.second, pos.first, ' ');
+            mvaddch(pos.y, pos.x, ' ');
             b->Move(iWidth, iHeight);
             pos = b->getPos();
-            mvaddch(pos.second, pos.first, b->getChar());
+            mvaddch(pos.y, pos.x, b->getChar());
         }
         refresh();
         std::this_thread::sleep_for(std::chrono::milliseconds(75));
