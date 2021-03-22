@@ -43,7 +43,7 @@ BLACK	include/olcPixelGameEngine.h	/^		WHITE(255, 255, 255), BLACK(0, 0, 0), BLA
 BLANK	include/olcPixelGameEngine.h	/^		WHITE(255, 255, 255), BLACK(0, 0, 0), BLANK(0, 0, 0, 0);$/;"	v	namespace:olc	typeref:typename:const Pixel
 BLUE	include/olcPixelGameEngine.h	/^		BLUE(0, 0, 255), DARK_BLUE(0, 0, 128), VERY_DARK_BLUE(0, 0, 64),$/;"	v	namespace:olc	typeref:typename:const Pixel
 Ball	balls.cpp	/^        Ball(): x(rand()%100), y(rand()%100), dx(rand()%4-2), dy(rand()%4-2) {$/;"	f	class:Ball	file:
-Ball	balls.cpp	/^        Ball(int x, int y, int dx, int dy): x(x), y(y), dx(dx), dy(dy) {}$/;"	f	class:Ball	file:
+Ball	balls.cpp	/^        Ball(int x, int y, int dx, int dy, char c): x(x), y(y), dx(dx), dy(dy), c(c) {}$/;"	f	class:Ball	file:
 Ball	balls.cpp	/^class Ball {$/;"	c	file:
 C	include/olcPixelGameEngine.h	/^		A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,$/;"	e	enum:olc::Key
 CALLSTYLE	include/olcPixelGameEngine.h	/^	#define CALLSTYLE /;"	d
@@ -700,8 +700,11 @@ bUpdate	include/olcPixelGameEngine.h	/^		bool bUpdate = false;$/;"	m	struct:olc:
 baseFile	include/olcPixelGameEngine.h	/^		std::ifstream baseFile;$/;"	m	class:olc::ResourcePack	typeref:typename:std::ifstream
 buffer	include/olcPixelGameEngine.h	/^	typedef void CALLSTYLE locBindBuffer_t(GLenum target, GLuint buffer);$/;"	t	namespace:olc	typeref:typename:void CALLSTYLE locBindBuffer_t (GLenum target,GLuint)
 buffers	include/olcPixelGameEngine.h	/^	typedef void CALLSTYLE locGenBuffers_t(GLsizei n, GLuint* buffers);$/;"	t	namespace:olc	typeref:typename:void CALLSTYLE locGenBuffers_t (GLsizei n,GLuint *)
+c	balls.cpp	/^        char c;$/;"	m	class:Ball	typeref:typename:char	file:
 category	sit_id.json	/^{"internal_priority":5,"last_event_time":1616120870,"sitn_id":13937950,"total_alerts":3,"first_e/;"	s
 ceil	include/olcPixelGameEngine.h	/^		v2d_generic  ceil() const { return v2d_generic(std::ceil(x), std::ceil(y)); }$/;"	f	struct:olc::v2d_generic	typeref:typename:v2d_generic
+chars	balls.cpp	/^        static const char chars[];$/;"	m	class:Ball	typeref:typename:const char[]	file:
+chars	balls.cpp	/^const char Ball::chars[] = {'*', 'O', 'o', '.', '$', '@', '#', '+'};$/;"	m	class:Ball	typeref:typename:const char[]
 clean	Makefile	/^clean:$/;"	t
 clean/fast	Makefile	/^clean\/fast: clean$/;"	t
 cmake_check_build_system	Makefile	/^cmake_check_build_system:$/;"	t
@@ -738,6 +741,7 @@ funcPixelMode	include/olcPixelGameEngine.h	/^		std::function<olc::Pixel(const in
 g	include/olcPixelGameEngine.h	/^			struct { uint8_t r; uint8_t g; uint8_t b; uint8_t a; };$/;"	m	struct:olc::Pixel::__anon2476a4fe010a::__anon2476a4fe0208	typeref:typename:uint8_t
 gdistartup	include/olcPixelGameEngine.h	/^	} gdistartup;$/;"	v	namespace:olc	typeref:class:olc::GDIPlusStartup
 getAllPaths	tree.cpp	/^vector<vector <int>> getAllPaths(const Node& head) {$/;"	f	typeref:typename:vector<vector<int>>
+getChar	balls.cpp	/^        const char& getChar() { return c; }$/;"	f	class:Ball	typeref:typename:const char &	file:
 getPos	balls.cpp	/^        TupleInts getPos() {$/;"	f	class:Ball	typeref:typename:TupleInts	file:
 glDeviceContext	include/olcPixelGameEngine.h	/^		glDeviceContext_t glDeviceContext = 0;$/;"	m	class:olc::Renderer_OGL33	typeref:typename:glDeviceContext_t
 glDeviceContext_t	include/olcPixelGameEngine.h	/^	typedef HDC glDeviceContext_t;$/;"	t	typeref:typename:HDC

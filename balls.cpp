@@ -19,14 +19,17 @@ struct TupleInts {
 
 class Ball {
     private:
+        static const char chars[];
         int x, y, dx, dy;
+        char c;
     public:
         Ball(): x(rand()%100), y(rand()%100), dx(rand()%4-2), dy(rand()%4-2) {
             if (dx == 0) dx = 1;
             if (dy == 0) dy = 1;
+            c = Ball::chars[rand() % strlen(Ball::chars)];
         }
 
-        Ball(int x, int y, int dx, int dy): x(x), y(y), dx(dx), dy(dy) {}
+        Ball(int x, int y, int dx, int dy, char c): x(x), y(y), dx(dx), dy(dy), c(c) {}
 
         TupleInts getPos() {
             return TupleInts{x, y};
@@ -44,8 +47,11 @@ class Ball {
                 y = (y <= 0)? -y : (height - (y - height));
             }
         }
+
+        const char& getChar() { return c; }
 };
     
+const char Ball::chars[] = {'*', 'O', 'o', '.', '$', '@', '#', '+'};
 
 void die(const char *msg) {
     std::cout << msg << std::endl;
@@ -89,7 +95,7 @@ int main(int argc, char **argv) {
             mvaddch(pos.second, pos.first, ' ');
             b->Move(iWidth, iHeight);
             pos = b->getPos();
-            mvaddch(pos.second, pos.first, 'O');
+            mvaddch(pos.second, pos.first, b->getChar());
         }
         refresh();
         std::this_thread::sleep_for(std::chrono::milliseconds(75));
