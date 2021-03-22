@@ -47,16 +47,30 @@ class Ball {
 };
     
 
+void die(const char *msg) {
+    std::cout << msg << std::endl;
+    exit(1);
+}
+
 int main(int argc, char **argv) {
+
     TupleInts pos;
     int iWidth{0};
     int iHeight{0};
     std::vector<std::unique_ptr<Ball>> vBalls;
+    int iNumBalls{0};
 
+    if (argc < 2)
+        die ("Provide a num of balls");
+    try {
+        iNumBalls = std::atoi(argv[1]);
+    } catch (std::exception e) {
+        std::cout << e.what() << std::endl;
+    }
     // init
     srand(time(0));
     signal(SIGINT, signalCallbackHandler);
-    for (int i = 0; i < 40; ++i)
+    for (int i = 0; i < iNumBalls; ++i)
         vBalls.push_back(std::make_unique<Ball>());
 
     // curses screen init

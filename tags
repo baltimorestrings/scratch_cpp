@@ -716,6 +716,7 @@ decal	include/olcPixelGameEngine.h	/^		olc::Decal* decal = nullptr;$/;"	m	struct
 default_target	Makefile	/^default_target: all$/;"	t
 depend	Makefile	/^depend:$/;"	t
 description	sit_id.json	/^{"internal_priority":5,"last_event_time":1616120870,"sitn_id":13937950,"total_alerts":3,"first_e/;"	s
+die	balls.cpp	/^void die(const char *msg) {$/;"	f	typeref:typename:void
 die	scratch.cpp	/^void die(const char * s) {$/;"	f	typeref:typename:void
 dot	include/olcPixelGameEngine.h	/^		T dot(const v2d_generic& rhs) const { return this->x * rhs.x + this->y * rhs.y; }$/;"	f	struct:olc::v2d_generic	typeref:typename:T
 dx	balls.cpp	/^        int x, y, dx, dy;$/;"	m	class:Ball	typeref:typename:int	file:
