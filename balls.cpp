@@ -51,13 +51,13 @@ int main(int argc, char **argv) {
     TupleInts pos;
     int iWidth{0};
     int iHeight{0};
-    std::vector<Ball> vBalls;
+    std::vector<std::unique_ptr<Ball>> vBalls;
 
     // init
     srand(time(0));
     signal(SIGINT, signalCallbackHandler);
     for (int i = 0; i < 40; ++i)
-        vBalls.push_back(Ball());
+        vBalls.push_back(std::make_unique<Ball>());
 
     // curses screen init
     initscr();
@@ -70,7 +70,7 @@ int main(int argc, char **argv) {
 
     while(true) {
         // main loop
-        for (auto b = vBalls.begin(); b != vBalls.end(); ++b) {
+        for (auto &b : vBalls) {
             pos = b->getPos();
             mvaddch(pos.second, pos.first, ' ');
             b->Move(iWidth, iHeight);
