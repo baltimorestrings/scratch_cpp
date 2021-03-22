@@ -1,0 +1,4 @@
+def thisFunctionHasAnError():
+    asdf
+
+thisFunctionHasAnError()

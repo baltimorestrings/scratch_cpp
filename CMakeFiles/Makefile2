@@ -74,6 +74,7 @@ CMAKE_BINARY_DIR = /Users/afrankel02/cpp/cli
 # The main recursive "all" target.
 all: CMakeFiles/o.dir/all
 all: CMakeFiles/go.dir/all
+all: CMakeFiles/tree.dir/all
 
 .PHONY : all
 
@@ -85,6 +86,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/o.dir/clean
 clean: CMakeFiles/go.dir/clean
+clean: CMakeFiles/tree.dir/clean
 
 .PHONY : clean
 
@@ -141,6 +143,33 @@ go: CMakeFiles/go.dir/rule
 CMakeFiles/go.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go.dir/build.make CMakeFiles/go.dir/clean
 .PHONY : CMakeFiles/go.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/tree.dir
+
+# All Build rule for target.
+CMakeFiles/tree.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tree.dir/build.make CMakeFiles/tree.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tree.dir/build.make CMakeFiles/tree.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/afrankel02/cpp/cli/CMakeFiles --progress-num=5,6 "Built target tree"
+.PHONY : CMakeFiles/tree.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/tree.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/afrankel02/cpp/cli/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/tree.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/afrankel02/cpp/cli/CMakeFiles 0
+.PHONY : CMakeFiles/tree.dir/rule
+
+# Convenience name for target.
+tree: CMakeFiles/tree.dir/rule
+
+.PHONY : tree
+
+# clean rule for target.
+CMakeFiles/tree.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tree.dir/build.make CMakeFiles/tree.dir/clean
+.PHONY : CMakeFiles/tree.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

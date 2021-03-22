@@ -155,32 +155,18 @@ go/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go.dir/build.make CMakeFiles/go.dir/build
 .PHONY : go/fast
 
-m.o: m.cpp.o
+#=============================================================================
+# Target rules for targets named tree
 
-.PHONY : m.o
+# Build rule for target.
+tree: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tree
+.PHONY : tree
 
-# target to build an object file
-m.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/o.dir/build.make CMakeFiles/o.dir/m.cpp.o
-.PHONY : m.cpp.o
-
-m.i: m.cpp.i
-
-.PHONY : m.i
-
-# target to preprocess a source file
-m.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/o.dir/build.make CMakeFiles/o.dir/m.cpp.i
-.PHONY : m.cpp.i
-
-m.s: m.cpp.s
-
-.PHONY : m.s
-
-# target to generate assembly for a file
-m.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/o.dir/build.make CMakeFiles/o.dir/m.cpp.s
-.PHONY : m.cpp.s
+# fast build rule for target.
+tree/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tree.dir/build.make CMakeFiles/tree.dir/build
+.PHONY : tree/fast
 
 main.o: main.cpp.o
 
@@ -209,6 +195,60 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go.dir/build.make CMakeFiles/go.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+scratch.o: scratch.cpp.o
+
+.PHONY : scratch.o
+
+# target to build an object file
+scratch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/o.dir/build.make CMakeFiles/o.dir/scratch.cpp.o
+.PHONY : scratch.cpp.o
+
+scratch.i: scratch.cpp.i
+
+.PHONY : scratch.i
+
+# target to preprocess a source file
+scratch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/o.dir/build.make CMakeFiles/o.dir/scratch.cpp.i
+.PHONY : scratch.cpp.i
+
+scratch.s: scratch.cpp.s
+
+.PHONY : scratch.s
+
+# target to generate assembly for a file
+scratch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/o.dir/build.make CMakeFiles/o.dir/scratch.cpp.s
+.PHONY : scratch.cpp.s
+
+tree.o: tree.cpp.o
+
+.PHONY : tree.o
+
+# target to build an object file
+tree.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tree.dir/build.make CMakeFiles/tree.dir/tree.cpp.o
+.PHONY : tree.cpp.o
+
+tree.i: tree.cpp.i
+
+.PHONY : tree.i
+
+# target to preprocess a source file
+tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tree.dir/build.make CMakeFiles/tree.dir/tree.cpp.i
+.PHONY : tree.cpp.i
+
+tree.s: tree.cpp.s
+
+.PHONY : tree.s
+
+# target to generate assembly for a file
+tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tree.dir/build.make CMakeFiles/tree.dir/tree.cpp.s
+.PHONY : tree.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -219,12 +259,16 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... go"
 	@echo "... o"
-	@echo "... m.o"
-	@echo "... m.i"
-	@echo "... m.s"
+	@echo "... tree"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... scratch.o"
+	@echo "... scratch.i"
+	@echo "... scratch.s"
+	@echo "... tree.o"
+	@echo "... tree.i"
+	@echo "... tree.s"
 .PHONY : help
 
 

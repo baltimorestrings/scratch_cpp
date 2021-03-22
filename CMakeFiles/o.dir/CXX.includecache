@@ -6,17 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/Users/afrankel02/cpp/cli/m.cpp
+/Users/afrankel02/cpp/cli/scratch.cpp
+unordered_set
+-
+thread
+-
 iostream
--
-fstream
--
-vector
 -
 iomanip
 -
-cctype
+vector
 -
-algorithm
+stack
+-
+forward_list
+-
+map
+-
+unordered_map
+-
+unistd.h
+-
+list
 -
 

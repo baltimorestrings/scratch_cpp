@@ -76,27 +76,27 @@ include CMakeFiles/o.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/o.dir/flags.make
 
-CMakeFiles/o.dir/m.cpp.o: CMakeFiles/o.dir/flags.make
-CMakeFiles/o.dir/m.cpp.o: m.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/afrankel02/cpp/cli/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/o.dir/m.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/o.dir/m.cpp.o -c /Users/afrankel02/cpp/cli/m.cpp
+CMakeFiles/o.dir/scratch.cpp.o: CMakeFiles/o.dir/flags.make
+CMakeFiles/o.dir/scratch.cpp.o: scratch.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/afrankel02/cpp/cli/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/o.dir/scratch.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/o.dir/scratch.cpp.o -c /Users/afrankel02/cpp/cli/scratch.cpp
 
-CMakeFiles/o.dir/m.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/o.dir/m.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/afrankel02/cpp/cli/m.cpp > CMakeFiles/o.dir/m.cpp.i
+CMakeFiles/o.dir/scratch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/o.dir/scratch.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/afrankel02/cpp/cli/scratch.cpp > CMakeFiles/o.dir/scratch.cpp.i
 
-CMakeFiles/o.dir/m.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/o.dir/m.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/afrankel02/cpp/cli/m.cpp -o CMakeFiles/o.dir/m.cpp.s
+CMakeFiles/o.dir/scratch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/o.dir/scratch.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/afrankel02/cpp/cli/scratch.cpp -o CMakeFiles/o.dir/scratch.cpp.s
 
 # Object files for target o
 o_OBJECTS = \
-"CMakeFiles/o.dir/m.cpp.o"
+"CMakeFiles/o.dir/scratch.cpp.o"
 
 # External object files for target o
 o_EXTERNAL_OBJECTS =
 
-o : CMakeFiles/o.dir/m.cpp.o
+o : CMakeFiles/o.dir/scratch.cpp.o
 o : CMakeFiles/o.dir/build.make
 o : CMakeFiles/o.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/afrankel02/cpp/cli/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable o"
