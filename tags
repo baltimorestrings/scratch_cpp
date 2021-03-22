@@ -42,8 +42,8 @@ BACK	include/olcPixelGameEngine.h	/^		BACK, ESCAPE, RETURN, ENTER, PAUSE, SCROLL
 BLACK	include/olcPixelGameEngine.h	/^		WHITE(255, 255, 255), BLACK(0, 0, 0), BLANK(0, 0, 0, 0);$/;"	v	namespace:olc	typeref:typename:const Pixel
 BLANK	include/olcPixelGameEngine.h	/^		WHITE(255, 255, 255), BLACK(0, 0, 0), BLANK(0, 0, 0, 0);$/;"	v	namespace:olc	typeref:typename:const Pixel
 BLUE	include/olcPixelGameEngine.h	/^		BLUE(0, 0, 255), DARK_BLUE(0, 0, 128), VERY_DARK_BLUE(0, 0, 64),$/;"	v	namespace:olc	typeref:typename:const Pixel
-Ball	balls.cpp	/^        Ball(): x(rand()%100), y(rand()%100), dx(rand()%4-2), dy(rand()%4-2) {$/;"	f	class:Ball	file:
-Ball	balls.cpp	/^        Ball(int x, int y, int dx, int dy, char c): x(x), y(y), dx(dx), dy(dy), c(c) {}$/;"	f	class:Ball	file:
+Ball	balls.cpp	/^        Ball(): pos{rand()%100, rand()%100}, dx(rand()%4-2), dy(rand()%4-2) {$/;"	f	class:Ball	file:
+Ball	balls.cpp	/^        Ball(int x, int y, int dx, int dy, char c): pos{x,y}, dx(dx), dy(dy), c(c) {}$/;"	f	class:Ball	file:
 Ball	balls.cpp	/^class Ball {$/;"	c	file:
 C	include/olcPixelGameEngine.h	/^		A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,$/;"	e	enum:olc::Key
 CALLSTYLE	include/olcPixelGameEngine.h	/^	#define CALLSTYLE /;"	d
@@ -533,6 +533,7 @@ Platform_Emscripten	include/olcPixelGameEngine.h	/^	class Platform_Emscripten : 
 Platform_GLUT	include/olcPixelGameEngine.h	/^	class Platform_GLUT : public olc::Platform$/;"	c	namespace:olc
 Platform_Linux	include/olcPixelGameEngine.h	/^	class Platform_Linux : public olc::Platform$/;"	c	namespace:olc
 Platform_Windows	include/olcPixelGameEngine.h	/^	class Platform_Windows : public olc::Platform$/;"	c	namespace:olc
+PositionTuple	balls.cpp	/^struct PositionTuple {$/;"	s	file:
 PrepareDevice	include/olcPixelGameEngine.h	/^		void PrepareDevice() override$/;"	f	class:olc::Renderer_OGL10	typeref:typename:void
 PrepareDevice	include/olcPixelGameEngine.h	/^		void PrepareDevice() override$/;"	f	class:olc::Renderer_OGL33	typeref:typename:void
 PrepareDrawing	include/olcPixelGameEngine.h	/^		void PrepareDrawing() override$/;"	f	class:olc::Renderer_OGL10	typeref:typename:void
@@ -624,7 +625,6 @@ ThreadStartUp	include/olcPixelGameEngine.h	/^		virtual olc::rcode ThreadStartUp(
 ThreadStartUp	include/olcPixelGameEngine.h	/^		virtual olc::rcode ThreadStartUp() override$/;"	f	class:olc::Platform_Emscripten	typeref:typename:olc::rcode
 ThreadStartUp	include/olcPixelGameEngine.h	/^		virtual olc::rcode ThreadStartUp() override$/;"	f	class:olc::Platform_GLUT	typeref:typename:olc::rcode
 ThreadStartUp	include/olcPixelGameEngine.h	/^		virtual olc::rcode ThreadStartUp() override$/;"	f	class:olc::Platform_Linux	typeref:typename:olc::rcode
-TupleInts	balls.cpp	/^struct TupleInts {$/;"	s	file:
 TwoInts	scratch.cpp	/^struct TwoInts {$/;"	s	file:
 U	include/olcPixelGameEngine.h	/^		A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,$/;"	e	enum:olc::Key
 UNIX	CMakeFiles/3.19.7/CMakeCCompiler.cmake	/^  set(UNIX 1)$/;"	v
@@ -722,14 +722,13 @@ description	sit_id.json	/^{"internal_priority":5,"last_event_time":1616120870,"s
 die	balls.cpp	/^void die(const char *msg) {$/;"	f	typeref:typename:void
 die	scratch.cpp	/^void die(const char * s) {$/;"	f	typeref:typename:void
 dot	include/olcPixelGameEngine.h	/^		T dot(const v2d_generic& rhs) const { return this->x * rhs.x + this->y * rhs.y; }$/;"	f	struct:olc::v2d_generic	typeref:typename:T
-dx	balls.cpp	/^        int x, y, dx, dy;$/;"	m	class:Ball	typeref:typename:int	file:
-dy	balls.cpp	/^        int x, y, dx, dy;$/;"	m	class:Ball	typeref:typename:int	file:
+dx	balls.cpp	/^        int dx, dy;$/;"	m	class:Ball	typeref:typename:int	file:
+dy	balls.cpp	/^        int dx, dy;$/;"	m	class:Ball	typeref:typename:int	file:
 edit_cache	Makefile	/^edit_cache:$/;"	t
 edit_cache/fast	Makefile	/^edit_cache\/fast: edit_cache$/;"	t
 fBlendFactor	include/olcPixelGameEngine.h	/^		float		fBlendFactor = 1.0f;$/;"	m	class:olc::PixelGameEngine	typeref:typename:float
 fFrameTimer	include/olcPixelGameEngine.h	/^		float		fFrameTimer = 1.0f;$/;"	m	class:olc::PixelGameEngine	typeref:typename:float
 fLastElapsed	include/olcPixelGameEngine.h	/^		float		fLastElapsed = 0.0f;$/;"	m	class:olc::PixelGameEngine	typeref:typename:float
-first	balls.cpp	/^    int first;$/;"	m	struct:TupleInts	typeref:typename:int	file:
 first	scratch.cpp	/^    int first;$/;"	m	struct:TwoInts	typeref:typename:int	file:
 first_event_time	sit_id.json	/^{"internal_priority":5,"last_event_time":1616120870,"sitn_id":13937950,"total_alerts":3,"first_e/;"	n
 floor	include/olcPixelGameEngine.h	/^		v2d_generic  floor() const { return v2d_generic(std::floor(x), std::floor(y)); }$/;"	f	struct:olc::v2d_generic	typeref:typename:v2d_generic
@@ -742,7 +741,7 @@ g	include/olcPixelGameEngine.h	/^			struct { uint8_t r; uint8_t g; uint8_t b; ui
 gdistartup	include/olcPixelGameEngine.h	/^	} gdistartup;$/;"	v	namespace:olc	typeref:class:olc::GDIPlusStartup
 getAllPaths	tree.cpp	/^vector<vector <int>> getAllPaths(const Node& head) {$/;"	f	typeref:typename:vector<vector<int>>
 getChar	balls.cpp	/^        const char& getChar() { return c; }$/;"	f	class:Ball	typeref:typename:const char &	file:
-getPos	balls.cpp	/^        TupleInts getPos() {$/;"	f	class:Ball	typeref:typename:TupleInts	file:
+getPos	balls.cpp	/^        const PositionTuple& getPos() {$/;"	f	class:Ball	typeref:typename:const PositionTuple &	file:
 glDeviceContext	include/olcPixelGameEngine.h	/^		glDeviceContext_t glDeviceContext = 0;$/;"	m	class:olc::Renderer_OGL33	typeref:typename:glDeviceContext_t
 glDeviceContext_t	include/olcPixelGameEngine.h	/^	typedef HDC glDeviceContext_t;$/;"	t	typeref:typename:HDC
 glDeviceContext_t	include/olcPixelGameEngine.h	/^	typedef X11::GLXContext glDeviceContext_t;$/;"	t	typeref:typename:X11::GLXContext
@@ -941,7 +940,7 @@ operator /=	include/olcPixelGameEngine.h	/^		v2d_generic& operator \/= (const v2
 operator /=	include/olcPixelGameEngine.h	/^	Pixel& Pixel::operator \/=(const float i)$/;"	f	class:olc::Pixel	typeref:typename:Pixel &
 operator <	include/olcPixelGameEngine.h	/^	template<class T, class U> inline bool operator < (const v2d_generic<T>& lhs, const v2d_generic/;"	f	namespace:olc	typeref:typename:bool
 operator <<	include/olcPixelGameEngine.h	/^		friend std::ostream& operator << (std::ostream& os, const v2d_generic& rhs) { os << rhs.str();/;"	f	namespace:olc	typeref:typename:std::ostream &
-operator ==	balls.cpp	/^    inline bool operator==(TupleInts o) { return (first == o.first && second == o.second); }$/;"	f	struct:TupleInts	typeref:typename:bool	file:
+operator ==	balls.cpp	/^    inline bool operator==(PositionTuple o) { return (x == o.x && y == o.y); }$/;"	f	struct:PositionTuple	typeref:typename:bool	file:
 operator ==	include/olcPixelGameEngine.h	/^		bool operator == (const v2d_generic& rhs) const { return (this->x == rhs.x && this->y == rhs.y/;"	f	struct:olc::v2d_generic	typeref:typename:bool
 operator ==	include/olcPixelGameEngine.h	/^	bool Pixel::operator==(const Pixel& p) const$/;"	f	class:olc::Pixel	typeref:typename:bool
 operator ==	scratch.cpp	/^    inline bool operator ==(const TwoInts other) { return (first == other.first && second == oth/;"	f	struct:TwoInts	typeref:typename:bool	file:
@@ -964,6 +963,7 @@ platform	include/olcPixelGameEngine.h	/^	static std::unique_ptr<Platform> platfo
 pngReadStream	include/olcPixelGameEngine.h	/^	void pngReadStream(png_structp pngPtr, png_bytep data, png_size_t length)$/;"	f	namespace:olc	typeref:typename:void
 pointer	include/olcPixelGameEngine.h	/^	typedef void CALLSTYLE locVertexAttribPointer_t(GLuint index, GLint size, GLenum type, GLboolea/;"	t	namespace:olc	typeref:typename:void CALLSTYLE locVertexAttribPointer_t (GLuint index,GLint size,GLenum type,GLboolean normalized,GLsizei stride,const void *)
 points	include/olcPixelGameEngine.h	/^		uint32_t points = 0;$/;"	m	struct:olc::DecalInstance	typeref:typename:uint32_t
+pos	balls.cpp	/^        PositionTuple pos;$/;"	m	class:Ball	typeref:typename:PositionTuple	file:
 pos	include/olcPixelGameEngine.h	/^			float pos[3];$/;"	m	struct:olc::Renderer_OGL33::locVertex	typeref:typename:float[3]
 pos	include/olcPixelGameEngine.h	/^		std::vector<olc::vf2d> pos;$/;"	m	struct:olc::DecalInstance	typeref:typename:std::vector<olc::vf2d>
 pre	scratch.cpp	/^class pre {$/;"	c	file:
@@ -996,7 +996,6 @@ scratch.cpp.s	Makefile	/^scratch.cpp.s:$/;"	t
 scratch.i	Makefile	/^scratch.i: scratch.cpp.i$/;"	t
 scratch.o	Makefile	/^scratch.o: scratch.cpp.o$/;"	t
 scratch.s	Makefile	/^scratch.s: scratch.cpp.s$/;"	t
-second	balls.cpp	/^    int second;$/;"	m	struct:TupleInts	typeref:typename:int	file:
 second	scratch.cpp	/^    int second;$/;"	m	struct:TwoInts	typeref:typename:int	file:
 shader	include/olcPixelGameEngine.h	/^	typedef void CALLSTYLE locAttachShader_t(GLuint program, GLuint shader);$/;"	t	namespace:olc	typeref:typename:void CALLSTYLE locAttachShader_t (GLuint program,GLuint)
 shader	include/olcPixelGameEngine.h	/^	typedef void CALLSTYLE locCompileShader_t(GLuint shader);$/;"	t	namespace:olc	typeref:typename:void CALLSTYLE locCompileShader_t (GLuint)
@@ -1056,9 +1055,9 @@ wglSwapInterval_t	include/olcPixelGameEngine.h	/^	typedef BOOL(WINAPI wglSwapInt
 wheel_callback	include/olcPixelGameEngine.h	/^		static EM_BOOL wheel_callback(int eventType, const EmscriptenWheelEvent* e, void* userData)$/;"	f	class:olc::Platform_Emscripten	typeref:typename:EM_BOOL
 width	include/olcPixelGameEngine.h	/^		int32_t width = 0;$/;"	m	class:olc::Sprite	typeref:typename:int32_t
 wsAppName	include/olcPixelGameEngine.h	/^		std::wstring wsAppName;$/;"	m	class:olc::Platform_Windows	typeref:typename:std::wstring
-x	balls.cpp	/^        int x, y, dx, dy;$/;"	m	class:Ball	typeref:typename:int	file:
+x	balls.cpp	/^    int x;$/;"	m	struct:PositionTuple	typeref:typename:int	file:
 x	include/olcPixelGameEngine.h	/^		T x = 0;$/;"	m	struct:olc::v2d_generic	typeref:typename:T
-y	balls.cpp	/^        int x, y, dx, dy;$/;"	m	class:Ball	typeref:typename:int	file:
+y	balls.cpp	/^    int y;$/;"	m	struct:PositionTuple	typeref:typename:int	file:
 y	include/olcPixelGameEngine.h	/^		T y = 0;$/;"	m	struct:olc::v2d_generic	typeref:typename:T
 ~Decal	include/olcPixelGameEngine.h	/^	Decal::~Decal()$/;"	f	class:olc::Decal
 ~GDIPlusStartup	include/olcPixelGameEngine.h	/^		~GDIPlusStartup()$/;"	f	class:olc::GDIPlusStartup
